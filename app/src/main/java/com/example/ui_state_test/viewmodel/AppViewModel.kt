@@ -30,11 +30,6 @@ class AppViewModel: ViewModel() {
     // change List item
     fun changeNumList() {
         if (_appUiState.value.numList.isNotEmpty()) {
-            _appUiState.value = _appUiState.value.copy(
-                numList = _appUiState.value.numList.mapIndexed { index, i ->
-                    i + index
-                }
-            )
             _appUiState.update {
                 it.copy(
                     numList = it.numList.mapIndexed {index, i ->
