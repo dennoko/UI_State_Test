@@ -3,6 +3,7 @@ package com.example.ui_state_test.viewmodel
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.update
 
 class AppViewModel: ViewModel() {
     private val _appUiState = MutableStateFlow(
@@ -13,23 +14,17 @@ class AppViewModel: ViewModel() {
 
     // count up
     fun countUp() {
-        _appUiState.value = _appUiState.value.copy(
-            count = _appUiState.value.count + 1
-        )
+        _appUiState.update { it.copy(count = it.count + 1) }
     }
 
     // add txt
     fun addTxt() {
-        _appUiState.value = _appUiState.value.copy(
-            txt = _appUiState.value.txt + " hoge"
-        )
+        _appUiState.update { it.copy(txt = it.txt + " hoge")}
     }
 
     // add numList
     fun addNumList() {
-        _appUiState.value = _appUiState.value.copy(
-            numList = _appUiState.value.numList + listOf(_appUiState.value.numList.size)
-        )
+        _appUiState.update { it.copy(numList = it.numList + listOf(it.numList.size)) }
     }
 
     // change List item
@@ -40,6 +35,13 @@ class AppViewModel: ViewModel() {
                     i + index
                 }
             )
+            _appUiState.update {
+                it.copy(
+                    numList = it.numList.mapIndexed {index, i ->
+                        i + index
+                    }
+                )
+            }
         }
     }
 
