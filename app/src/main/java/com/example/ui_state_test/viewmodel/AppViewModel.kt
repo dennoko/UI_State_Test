@@ -1,7 +1,6 @@
 package com.example.ui_state_test.viewmodel
 
 import androidx.lifecycle.ViewModel
-import com.example.ui_state_test.model.ui_state.AppUiState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 

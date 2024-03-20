@@ -1,4 +1,4 @@
-package com.example.ui_state_test.model.ui_state
+package com.example.ui_state_test.viewmodel
 
 data class AppUiState(
     val count: Int,
