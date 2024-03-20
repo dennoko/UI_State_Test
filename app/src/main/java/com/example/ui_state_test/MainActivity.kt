@@ -32,12 +32,12 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
                     AppScreen(
-                        uiState,
-                        { vm.countUp() },
-                        { vm.addTxt() },
-                        { vm.addNumList() },
-                        { vm.changeNumList() },
-                        { vm.reset() }
+                        uiState = uiState,
+                        countUp = { vm.countUp() },
+                        addHoge = { vm.addTxt() },
+                        addListItem = { vm.addNumList() },
+                        changeListItem = { vm.changeNumList() },
+                        reset = { vm.reset() }
                     )
                 }
             }
