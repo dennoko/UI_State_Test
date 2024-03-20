@@ -27,7 +27,6 @@ class MainActivity : ComponentActivity() {
             val uiState by vm.appUiState.collectAsState()
 
             UI_State_TestTheme {
-                // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background

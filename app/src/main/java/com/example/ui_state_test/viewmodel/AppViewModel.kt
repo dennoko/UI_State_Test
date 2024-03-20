@@ -6,11 +6,7 @@ import kotlinx.coroutines.flow.asStateFlow
 
 class AppViewModel: ViewModel() {
     private val _appUiState = MutableStateFlow(
-        AppUiState(
-            count = 0,
-            txt = "",
-            numList = listOf()
-        )
+        AppUiState()
     )
 
     val appUiState = _appUiState.asStateFlow()
@@ -49,10 +45,6 @@ class AppViewModel: ViewModel() {
 
     // reset
     fun reset() {
-        _appUiState.value = AppUiState(
-            count = 0,
-            txt = "",
-            numList = listOf()
-        )
+        _appUiState.value = AppUiState()
     }
 }
