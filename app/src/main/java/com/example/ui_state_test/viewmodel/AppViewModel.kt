@@ -47,4 +47,13 @@ class AppViewModel: ViewModel() {
             )
         }
     }
+
+    // reset
+    fun reset() {
+        _appUiState.value = AppUiState(
+            count = 0,
+            txt = "",
+            numList = listOf()
+        )
+    }
 }
